@@ -1,5 +1,13 @@
 import '../styles/global.scss';
+import { func, shape } from 'prop-types';
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }) {
+  return <Component pageProps={pageProps} />;
 }
+
+App.propTypes = {
+  Component: func,
+  pageProps: shape(),
+};
+
+export default App;
