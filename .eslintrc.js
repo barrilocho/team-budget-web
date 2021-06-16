@@ -27,6 +27,22 @@ module.exports = {
   ],
   plugins: ['react', 'prettier'],
   rules: {
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        required: {
+          some: ['nesting', 'id'],
+        },
+      },
+    ],
+    'jsx-a11y/label-has-for': [
+      'error',
+      {
+        required: {
+          some: ['nesting', 'id'],
+        },
+      },
+    ],
     'react/react-in-jsx-scope': 'off',
     'no-underscore-dangle': 'off',
     'react/require-default-props': [
