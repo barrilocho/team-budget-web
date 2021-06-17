@@ -1,8 +1,14 @@
 import '../styles/global.scss';
 import { func, shape } from 'prop-types';
+import { Provider } from 'react-redux';
+import store from '../src/application/store/store';
 
 function App({ Component, pageProps }) {
-  return <Component pageProps={pageProps} />;
+  return (
+    <Provider store={store}>
+      <Component pageProps={pageProps} />
+    </Provider>
+  );
 }
 
 App.propTypes = {
