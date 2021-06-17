@@ -1,4 +1,4 @@
-import { bool, number, oneOfType, shape, string } from 'prop-types';
+import { bool, node, number, oneOfType, shape, string } from 'prop-types';
 
 const Col = ({
   size,
@@ -10,6 +10,7 @@ const Col = ({
   widescreen,
   fullhd,
   className = '',
+  children,
 }) => {
   let classes = '';
   const DEVICE_SIZES = ['mobile', 'tablet', 'desktop', 'widescreen', 'fullhd'];
@@ -41,7 +42,7 @@ const Col = ({
       }`} `;
     }
   });
-  return <div className={`column ${classes}`} />;
+  return <div className={`column ${classes || ''}`}>{children}</div>;
 };
 const colSize = oneOfType([bool, number, string]);
 const stringOrNumber = oneOfType([number, string]);
@@ -64,5 +65,6 @@ Col.propTypes = {
   desktop: column,
   widescreen: column,
   fullhd: column,
+  children: node,
 };
 export default Col;

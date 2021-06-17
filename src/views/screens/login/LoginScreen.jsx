@@ -1,26 +1,24 @@
 import Button from '../../components/button/ButtonComponent';
-import Input from '../../components/input/InputComponent';
+import LoginForm from '../forms/LoginForm';
+import { Container, Row, Col } from '../../components/grid';
 
 const LoginScreen = () => {
+  const handleLogin = (values) => {
+    console.log('🚀 ~ file: LoginScreen.jsx ~ line 7 ~ onSubmit ~ values', values);
+  };
   return (
-    <div>
-      <Input
-        prefixIcon="user"
-        id="username"
-        name="username"
-        placeholder="Escriba el usuario"
-        label="Nombre de usuario"
-      />
-      <Input
-        prefixIcon="lock"
-        id="password"
-        name="password"
-        type="password"
-        placeholder="Escriba la contraseña"
-        label="Contraseña"
-      />
-      <Button text="Iniciar Sesión" type="button" />
-    </div>
+    <Container isFluid>
+      <Row>
+        <Col>
+          <LoginForm onSubmit={handleLogin} initialValues={{ password: '', email: '' }} />
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Button formId="loginForm" text="Iniciar Sesión" type="submit" />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

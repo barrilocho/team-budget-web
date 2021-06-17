@@ -1,8 +1,7 @@
-import { string } from 'prop-types';
+import { func, string } from 'prop-types';
 import Label from '../label/LabelComponent';
 
 const Input = ({
-  defaultValue = '',
   placeholder = '',
   type = 'text',
   label = '',
@@ -10,6 +9,9 @@ const Input = ({
   id = '',
   prefixIcon = '',
   suffixIcon = '',
+  error = '',
+  value = '',
+  onChange,
 }) => {
   return (
     <div className="field">
@@ -20,10 +22,11 @@ const Input = ({
         }`}
       >
         <input
+          onChange={onChange}
           name={name}
           id={id}
-          defaultValue={defaultValue}
-          className="input"
+          value={value}
+          className={`input ${error ? 'is-danger' : ''}`}
           type={type}
           placeholder={placeholder}
         />
@@ -37,6 +40,7 @@ const Input = ({
             <i className={`fas fa-${suffixIcon}`} />
           </span>
         )}
+        {error && <p className="help is-danger">{error}</p>}
       </div>
     </div>
   );
@@ -45,11 +49,13 @@ const Input = ({
 Input.propTypes = {
   placeholder: string,
   type: string,
-  defaultValue: string,
   name: string,
   label: string,
   id: string,
   prefixIcon: string,
   suffixIcon: string,
+  error: string,
+  value: string,
+  onChange: func,
 };
 export default Input;
