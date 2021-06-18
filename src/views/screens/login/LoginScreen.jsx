@@ -1,10 +1,13 @@
+import { useDispatch } from 'react-redux';
 import Button from '../../components/button/ButtonComponent';
-import LoginForm from '../forms/LoginForm';
+import LoginForm from './forms/LoginForm';
 import { Container, Row, Col } from '../../components/grid';
+import login from '../../../application/actions/authAction';
 
 const LoginScreen = () => {
+  const dispatch = useDispatch();
   const handleLogin = (values) => {
-    console.log('🚀 ~ file: LoginScreen.jsx ~ line 7 ~ onSubmit ~ values', values);
+    dispatch(login(values.email, values.password));
   };
   return (
     <Container isFluid>

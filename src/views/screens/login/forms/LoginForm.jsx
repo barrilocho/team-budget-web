@@ -2,7 +2,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { func, shape, string } from 'prop-types';
 
-import Input from '../../components/input';
+import Input from '../../../components/input';
 
 const LoginForm = ({ onSubmit, initialValues }) => {
   const LoginSchema = Yup.object().shape({
