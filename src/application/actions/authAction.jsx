@@ -8,4 +8,18 @@ const login = (id, name) => ({
   },
 });
 
-export default login;
+const startLoginEmailPassword = (email, password) => {
+  return (dispatch) => {
+    setTimeout(() => {
+      dispatch(login(email, password));
+    }, 3500);
+  };
+};
+
+const SignUpWithEmailPasswordRequest = (name, email, password) => {
+  return (dispatch) => {
+    /// mandar el api
+  };
+};
+
+export { startLoginEmailPassword, login, SignUpWithEmailPasswordRequest };
