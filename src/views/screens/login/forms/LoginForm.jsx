@@ -6,7 +6,7 @@ import Input from '../../../components/input';
 
 const LoginForm = ({ onSubmit, initialValues }) => {
   const LoginSchema = Yup.object().shape({
-    email: Yup.string().email('Email no valido').required('Email es requerido'),
+    username: Yup.string().required('Nombre de usuario es requerido'),
     password: Yup.string().required('Contraseña es requerido'),
   });
 
@@ -20,14 +20,14 @@ const LoginForm = ({ onSubmit, initialValues }) => {
         return (
           <form onSubmit={handleSubmit} id="loginForm">
             <Input
-              placeholder="Escriba el correo"
+              placeholder="Nombre de usuario"
               label="Correo Electronico"
-              value={values.email}
+              value={values.username}
               onChange={handleChange}
-              name="email"
-              id="email"
+              name="username"
+              id="username"
               prefixIcon="user"
-              error={submitCount ? errors.email : ''}
+              error={submitCount ? errors.username : ''}
             />
             <Input
               placeholder="Escriba la contraseña"

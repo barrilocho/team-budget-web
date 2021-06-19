@@ -9,7 +9,7 @@ import styles from './styles/LoginScreen.module.scss';
 const LoginScreen = () => {
   const dispatch = useDispatch();
   const handleLogin = (values) => {
-    dispatch(startLoginEmailPassword(values.email, values.password));
+    dispatch(startLoginEmailPassword(values.username, values.password));
   };
   return (
     <div className={styles.login}>
@@ -17,7 +17,7 @@ const LoginScreen = () => {
         <Container isFluid>
           <Row>
             <Col>
-              <LoginForm onSubmit={handleLogin} initialValues={{ password: '', email: '' }} />
+              <LoginForm onSubmit={handleLogin} initialValues={{ password: '', username: '' }} />
             </Col>
           </Row>
           <Row>

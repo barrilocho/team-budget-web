@@ -1,10 +1,10 @@
 import Api from '../../infrastructure/api';
 import types from '../../models/types';
 
-const startLoginEmailPassword = (email, password) => {
+const startLoginEmailPassword = (username, password) => {
   return async (dispatch) => {
     try {
-      const response = await Api.auth.login(email, password);
+      const response = await Api.auth.login(username, password);
       dispatch({
         type: types.LOGIN_SUCCESS,
         payload: response,
