@@ -7,7 +7,6 @@ import { SignUpWithEmailPasswordRequest } from '../../../application/actions/aut
 const LoginScreen = () => {
   const dispatch = useDispatch();
   const handleSignUp = (values) => {
-    console.log('🚀 ~ file: SignUpScreen.jsx ~ line 9 ~ handleSignUp ~ values', values);
     dispatch(SignUpWithEmailPasswordRequest(values.name, values.email, values.password));
   };
   return (

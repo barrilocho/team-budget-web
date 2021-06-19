@@ -5,7 +5,6 @@ const startLoginEmailPassword = (email, password) => {
   return async (dispatch) => {
     try {
       const response = await Api.auth.login(email, password);
-      console.log('🚀 ~ file: authActions.jsx ~ line 8 ~ return ~ response', response);
       dispatch({
         type: types.LOGIN_SUCCESS,
         payload: response,
