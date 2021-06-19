@@ -33,7 +33,9 @@ const Col = ({
     responsiveSize += `${widescreen > 0 ? ` is-widescreen-${widescreen}` : ''} `;
     responsiveSize += `${fullhd > 0 ? ` is-fullhd-${fullhd}` : ''} `;
   }
-
+  if (!responsiveSize) {
+    responsiveSize = '';
+  }
   classes = `${finalSize} ${offsetSize} ${narrowSize} ${responsiveSize} ${className}`.trim();
   DEVICE_SIZES.forEach((brkPoint) => {
     if (brkPoint === 0) {
