@@ -14,10 +14,18 @@ import types from '../../models/types';
 
 const authReducer = (state = {}, action) => {
   switch (action.type) {
-    case types.login:
+    case types.LOGIN:
       return {
         id: action.payload.id,
         name: action.payload.name,
+      };
+    case types.LOGIN_SUCCESS:
+      return {
+        response: action.payload,
+      };
+    case types.LOGIN__ERROR:
+      return {
+        error: action.payload,
       };
     case types.logout:
       return {};

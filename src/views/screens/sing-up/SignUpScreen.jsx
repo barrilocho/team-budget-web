@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import Button from '../../components/button/ButtonComponent';
 import LoginForm from './forms/SignUpForm';
 import { Container, Row, Col } from '../../components/grid';
-import { SignUpWithEmailPasswordRequest } from '../../../application/actions/authAction';
+import { SignUpWithEmailPasswordRequest } from '../../../application/actions/authActions';
 
 const LoginScreen = () => {
   const dispatch = useDispatch();

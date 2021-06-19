@@ -1,6 +1,8 @@
 const types = {
-  login: '[Auth] Login',
-  logout: '[Auth] Logout',
+  LOGIN: '[Auth] Login',
+  LOGIN_SUCCESS: '[Auth] Login Success',
+  LOGIN__ERROR: '[Auth] Login Error',
+  LOGOUT: '[Auth] Logout',
 
   uiSetError: '[UI] Set Error',
   uiRemoveError: '[UI] Remove Error',
