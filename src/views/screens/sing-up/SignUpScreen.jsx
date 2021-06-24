@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import Link from 'next/link';
+import Head from 'next/head';
 import Button from '../../components/button/ButtonComponent';
 import LoginForm from './forms/SignUpForm';
 import { Container, Row, Col } from '../../components/grid';
@@ -15,6 +16,10 @@ const LoginScreen = () => {
   };
   return (
     <AuthLayout>
+      <Head>
+        <title>Registrarme</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Container isFluid>
         <Row>
           <Col>

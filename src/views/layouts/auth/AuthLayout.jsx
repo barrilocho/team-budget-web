@@ -4,8 +4,8 @@ import Box from '../../components/box';
 
 const AuthLayout = ({ children }) => {
   return (
-    <div className={styles.login}>
-      <Box className={styles.login__box}>{children}</Box>
+    <div className={styles['auth-layout']}>
+      <Box className={styles['auth-layout__box']}>{children}</Box>
     </div>
   );
 };

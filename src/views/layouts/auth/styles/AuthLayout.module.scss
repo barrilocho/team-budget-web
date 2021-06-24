@@ -1,6 +1,6 @@
 @import './../../../../../styles/core';
 
-.login {
+.auth-layout {
   display: flex;
   height: 100vh;
   align-items: center;
@@ -9,7 +9,7 @@
   background: rgb(59,81,82);
   background: linear-gradient(90deg, rgba(59,81,82,1) 0%, rgba(74,145,149,1) 50%, rgba(59,81,82,1) 100%);
 
-  .login__box {
+  .auth-layout__box {
     // background-color: #ffffffdd;
   }
 }
