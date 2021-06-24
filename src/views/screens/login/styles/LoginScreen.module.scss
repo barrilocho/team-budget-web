@@ -1,16 +1,7 @@
 @import './../../../../../styles/core';
 
-.login {
+.login__hyperlink {
   display: flex;
-  height: 100vh;
-  align-items: center;
   justify-content: center;
-  // width: 100;
-  background: rgb(59,81,82);
-  background: linear-gradient(90deg, rgba(59,81,82,1) 0%, rgba(74,145,149,1) 50%, rgba(59,81,82,1) 100%);
-
-  .login__box {
-    // background-color: #ffffffdd;
-  }
+  align-items: center;
 }
-
