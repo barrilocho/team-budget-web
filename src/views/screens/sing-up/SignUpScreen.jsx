@@ -1,8 +1,12 @@
 import { useDispatch } from 'react-redux';
+import Link from 'next/link';
 import Button from '../../components/button/ButtonComponent';
 import LoginForm from './forms/SignUpForm';
 import { Container, Row, Col } from '../../components/grid';
 import { SignUpWithEmailPasswordRequest } from '../../../application/actions/authActions';
+import AuthLayout from '../../layouts/auth';
+import styles from './styles/SignUpScreen.module.scss';
+import Hyperlink from '../../components/hyperlink';
 
 const LoginScreen = () => {
   const dispatch = useDispatch();
@@ -10,21 +14,36 @@ const LoginScreen = () => {
     dispatch(SignUpWithEmailPasswordRequest(values.name, values.email, values.password));
   };
   return (
-    <Container isFluid>
-      <Row>
-        <Col>
-          <LoginForm
-            onSubmit={handleSignUp}
-            initialValues={{ password: '', email: '', name: '', confirmPassword: '' }}
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Button formId="signUpForm" text="Iniciar Sesión" type="submit" />
-        </Col>
-      </Row>
-    </Container>
+    <AuthLayout>
+      <Container isFluid>
+        <Row>
+          <Col>
+            <LoginForm
+              onSubmit={handleSignUp}
+              initialValues={{
+                password: '',
+                email: '',
+                name: '',
+                confirmPassword: '',
+                hasFamily: '',
+              }}
+            />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Button formId="signUpForm" text="Registrarme" type="submit" />
+          </Col>
+        </Row>
+        <Row>
+          <Col className={styles['sign-up__hyperlink']}>
+            <Link href="/login">
+              <Hyperlink text="¿Ya tienes cuenta? Inicia sesión" passHref />
+            </Link>
+          </Col>
+        </Row>
+      </Container>
+    </AuthLayout>
   );
 };
 
