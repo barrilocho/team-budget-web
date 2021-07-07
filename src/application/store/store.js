@@ -1,15 +1,10 @@
 import { useMemo } from 'react';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleware from 'redux-thunk';
-import authReducer from '../reducers/authReducer';
-import uiReducer from '../reducers/uiReducer';
+import reducers from '../reducers';
 
 let rootStore;
-const reducers = combineReducers({
-  auth: authReducer,
-  ui: uiReducer,
-});
 
 function initStore(initialState) {
   return createStore(reducers, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)));
