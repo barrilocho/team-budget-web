@@ -1,7 +1,7 @@
 const types = {
   LOGIN: '[Auth] Login',
   LOGIN_SUCCESS: '[Auth] Login Success',
-  LOGIN__ERROR: '[Auth] Login Error',
+  LOGIN_ERROR: '[Auth] Login Error',
   LOGOUT: '[Auth] Logout',
 
   uiSetError: '[UI] Set Error',

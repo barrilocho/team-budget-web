@@ -11,7 +11,7 @@ const startLoginEmailPassword = (username, password) => {
       });
     } catch (error) {
       dispatch({
-        type: types.LOGIN__ERROR,
+        type: types.LOGIN_ERROR,
         payload: error,
       });
     }

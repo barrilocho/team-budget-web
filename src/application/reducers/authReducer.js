@@ -23,7 +23,7 @@ const authReducer = (state = {}, action) => {
       return {
         response: action.payload,
       };
-    case types.LOGIN__ERROR:
+    case types.LOGIN_ERROR:
       return {
         error: action.payload,
       };
